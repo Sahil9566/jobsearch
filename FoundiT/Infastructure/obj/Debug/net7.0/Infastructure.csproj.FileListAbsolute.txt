@@ -1,0 +1,17 @@
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\bin\Debug\net7.0\Infastructure.deps.json
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\bin\Debug\net7.0\Infastructure.runtimeconfig.json
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\bin\Debug\net7.0\Infastructure.dll
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\bin\Debug\net7.0\Infastructure.pdb
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\bin\Debug\net7.0\Domain.dll
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\bin\Debug\net7.0\Domain.pdb
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.csproj.AssemblyReference.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.AssemblyInfoInputs.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.AssemblyInfo.cs
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.csproj.CoreCompileInputs.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.csproj.CopyComplete
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.dll
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\refint\Infastructure.dll
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.pdb
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\Infastructure.genruntimeconfig.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Infastructure\obj\Debug\net7.0\ref\Infastructure.dll

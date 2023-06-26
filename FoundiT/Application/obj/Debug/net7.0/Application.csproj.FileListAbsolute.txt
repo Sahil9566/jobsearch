@@ -1,0 +1,14 @@
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\bin\Debug\net7.0\Application.deps.json
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\bin\Debug\net7.0\Application.runtimeconfig.json
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\bin\Debug\net7.0\Application.dll
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\bin\Debug\net7.0\Application.pdb
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.csproj.AssemblyReference.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.dll
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\refint\Application.dll
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.pdb
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\Application.genruntimeconfig.cache
+D:\JobSearchApplication\.NETCORE\FoundiT\Application\obj\Debug\net7.0\ref\Application.dll
