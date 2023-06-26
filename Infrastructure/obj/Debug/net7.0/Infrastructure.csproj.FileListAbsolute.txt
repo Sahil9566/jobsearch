@@ -1,0 +1,17 @@
+D:\.NetCoreApplications\Infrastructure\bin\Debug\net7.0\Infrastructure.deps.json
+D:\.NetCoreApplications\Infrastructure\bin\Debug\net7.0\Infrastructure.runtimeconfig.json
+D:\.NetCoreApplications\Infrastructure\bin\Debug\net7.0\Infrastructure.dll
+D:\.NetCoreApplications\Infrastructure\bin\Debug\net7.0\Infrastructure.pdb
+D:\.NetCoreApplications\Infrastructure\bin\Debug\net7.0\Domain.dll
+D:\.NetCoreApplications\Infrastructure\bin\Debug\net7.0\Domain.pdb
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.AssemblyReference.cache
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfoInputs.cache
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfo.cs
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CopyComplete
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.dll
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dll
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache
+D:\.NetCoreApplications\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
