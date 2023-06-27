@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RgWKlJEuAnEx4jIIo5SXp9KUqq2yvlVlWTu/IKURPzNlDlsvpqmfoYX737Ky0ZeqaV4zi5UknOtFMBDz5/j4Sg==",
+  "dgSpecHash": "/5y5Rb+rrKjneG2Eny/JXHqeiwaT/oUmNYMONkcqRD+B/FnI/v4aayed8qVHw/fNHcym8v3F8gcj/uLzmfy+Wg==",
   "success": true,
-  "projectFilePath": "D:\\JobSearchApplication\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj",
+  "projectFilePath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
