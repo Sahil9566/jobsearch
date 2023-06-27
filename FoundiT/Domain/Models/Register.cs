@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class Register:IdentityUser
+    public class Register : IdentityUser
     {
         [NotMapped]
         public IFormFile UploadResume { get; set; }
