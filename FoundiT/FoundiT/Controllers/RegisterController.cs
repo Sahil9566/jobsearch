@@ -25,7 +25,7 @@ namespace FoundiT.Controllers
             {
                 var user = await _registerRepository.Register(register);
                 if (user.Item1 == true)
-                {
+                {  
                     return Ok(user);
                 }
                 else

@@ -7,7 +7,6 @@ using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +15,7 @@ namespace Application.Repository
     public class MailService : IMailService
     {
         private readonly Domain.Models.MailSettings _mailSettings;
-        public MailService(IOptions<Domain.Models.MailSettings> mailSettings)
+        public MailService(IOptions<MailSettings> mailSettings)
         {
             _mailSettings = mailSettings.Value;
         }
@@ -27,7 +26,7 @@ namespace Application.Repository
             email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
             email.Subject = mailRequest.Subject;
             var builder = new BodyBuilder();
-            //if (mailRequest.Attachments != null)
+            //if (mailRequest.Attachments != null)  
             //{
             //    byte[] fileBytes;
             //    foreach (var file in mailRequest.Attachments)
@@ -45,7 +44,7 @@ namespace Application.Repository
             //}
             builder.HtmlBody = mailRequest.Body;
             email.Body = builder.ToMessageBody();
-            using var smtp = new MailKit.Net.Smtp.SmtpClient();
+            using var smtp = new SmtpClient();
             smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTls);
             smtp.Authenticate(_mailSettings.Mail, _mailSettings.Password);
             await smtp.SendAsync(email);

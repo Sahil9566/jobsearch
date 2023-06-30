@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Azure.Storage.Blobs;
 using Twilio;
 using Twilio.Rest.Verify.V2.Service;
+using Microsoft.WindowsAzure.Storage;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,37 +29,28 @@ builder.Services.AddScoped(_ =>
 string accountSid = Environment.GetEnvironmentVariable("ACd9245b36f4ad0c28d71852ac7632237c");
 string authToken = Environment.GetEnvironmentVariable("2b767e230a8524084729197666ec5b98");
 
-//TwilioClient.Init(accountSid, authToken);
-
-//var verificationCheck = VerificationCheckResource.Create(
-//    to: "+918091072710",
-//    code: "123456",
-//    pathServiceSid: "ACd9245b36f4ad0c28d71852ac7632237c"
-//);
-
-builder.Services.AddSingleton(x =>
+var connectionString = builder.Configuration.GetConnectionString("AzureStorage");
+builder.Services.AddScoped(_ =>
 {
-    var connectionString = builder.Configuration.GetConnectionString("AzureStorage");
-    var blobServiceClient = new BlobServiceClient(connectionString);
-    var smsRepository = new SmsRespository();
-    //var containerName = builder.Configuration.GetValue<string>("ContainerName");
+    var storageAccount = CloudStorageAccount.Parse(connectionString);
+    var blobClient = storageAccount.CreateCloudBlobClient();
+    var tableClient = storageAccount.CreateCloudTableClient();
 
-    // Add the required dependencies (context and userManager) here
-    var dbContextOptions = x.GetService<DbContextOptions<Applicationdbcontext>>();
-    var context = new Applicationdbcontext(dbContextOptions);
-
-    var userManager = x.GetService<UserManager<Register>>();
-
-    return new RegisterRepository(context, userManager, blobServiceClient,smsRepository  );
+    return new
+    {
+        BlobClient = blobClient,
+        TableClient = tableClient
+    };
 });
-
+builder.Services.AddScoped<IMailService, MailService>();
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddScoped<IRegisterRepository, RegisterRepository>();
 builder.Services.AddScoped<ISmsRepository, SmsRespository>();
 object value = builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddIdentity<Register, IdentityRole>()
         .AddEntityFrameworkStores<Applicationdbcontext>()
         .AddDefaultTokenProviders();
-builder.Services.AddScoped<UserManager<Register>>();
+builder.Services.AddScoped<UserManager<Register>>();   
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 

@@ -10,7 +10,7 @@ namespace Application.Repository.IRepository
     {
         Task<bool> SendSMSPinWithBasicAuth(string PhoneNumber);
         Task<bool> VerifyOTP(string OTP);
-    }
+    }  
 }
 
 

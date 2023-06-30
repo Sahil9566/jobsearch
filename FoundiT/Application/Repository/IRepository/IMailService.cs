@@ -12,4 +12,4 @@ namespace Application.Repository.IRepository
     {
         Task SendEmailAsync(MailRequest mailRequest);
     }
-}
+}   

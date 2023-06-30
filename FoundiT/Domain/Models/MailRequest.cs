@@ -15,3 +15,4 @@ namespace Domain.Models
         //public List<IFormFile> Attachments { get; set; }   
     }
 }
+    
