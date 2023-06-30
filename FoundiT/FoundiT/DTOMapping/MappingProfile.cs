@@ -12,4 +12,5 @@ namespace FoundiT.DTOMapping
             CreateMap<RegisterDTO, Register>().ReverseMap();
         }
     }
-}
+}   
+   

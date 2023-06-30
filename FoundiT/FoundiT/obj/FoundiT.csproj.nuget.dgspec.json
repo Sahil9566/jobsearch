@@ -32,7 +32,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj": {
+                "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -45,6 +49,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.16.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.2, )"
@@ -75,9 +87,21 @@
               "target": "Package",
               "version": "[1.16.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Sinch.ServerSdk": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "Twilio.AspNet.Core": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [

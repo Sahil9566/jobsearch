@@ -30,7 +30,6 @@ namespace Application.Repository
             _userManager = userManager;
             _blobServiceClient = blobServiceClient;
             _smsRepository = smsRepository;
-            //_containerName = containerName;
         }
 
         public async Task<(bool, Register)> Register(RegisterDTO register)
@@ -77,7 +76,7 @@ namespace Application.Repository
                 return (false, null);
             }
         }
-
+            
      
 
        

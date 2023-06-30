@@ -16,7 +16,7 @@ namespace FoundiT.Controllers
         public RegisterController(IRegisterRepository registerRepository, IMapper mapper)
         {
             _registerRepository = registerRepository;
-            _mapper = mapper;
+            _mapper = mapper;   
         }
         [HttpPost]
         public async Task<IActionResult> RegisterUser([FromForm] RegisterDTO register)
@@ -33,7 +33,7 @@ namespace FoundiT.Controllers
                     return BadRequest(new { message = "Failed to Create" });
                 }
             }
-            return BadRequest(ModelState);
+            return BadRequest(ModelState);   
         }
     }
 }
