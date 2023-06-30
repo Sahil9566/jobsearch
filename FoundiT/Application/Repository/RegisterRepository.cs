@@ -5,6 +5,7 @@ using Domain.Models;
 using Infastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,15 +22,17 @@ namespace Application.Repository
         private readonly Applicationdbcontext _context;
         private readonly BlobServiceClient _blobServiceClient;
         private readonly ISmsRepository _smsRepository;
+        private readonly IMailService _mailService;
 
 
 
-        public RegisterRepository(Applicationdbcontext context, UserManager<Register> userManager, BlobServiceClient blobServiceClient, ISmsRepository smsRepository)
+        public RegisterRepository(Applicationdbcontext context, UserManager<Register> userManager, BlobServiceClient blobServiceClient, ISmsRepository smsRepository, IMailService mailService)
         {
             _context = context;
             _userManager = userManager;
             _blobServiceClient = blobServiceClient;
             _smsRepository = smsRepository;
+            _mailService = mailService; 
         }
 
         public async Task<(bool, Register)> Register(RegisterDTO register)
@@ -63,7 +66,16 @@ namespace Application.Repository
             await blobClient.UploadAsync(register.ImageFile.OpenReadStream());
 
             user.ResumeUrl = blobClient.Uri.ToString(); // Save the URL instead of the file name
+            var mail = new MailRequest()
+            {
+                Body = $"Please verify your account <a href='http://localhost:3000/emailConfirmation/{register.Name}'>Verify Emails</a>",
+                Subject = "Verify Email Notification",
+                ToEmail = register.Email
+            };
 
+
+
+            await sendemail(mail); 
             var isSuccess = await _userManager.CreateAsync(user, register.Password);
 
             if (isSuccess.Succeeded)
@@ -76,9 +88,20 @@ namespace Application.Repository
                 return (false, null);
             }
         }
-            
-     
 
-       
+
+        [NonAction]
+        public async Task sendemail(MailRequest request)
+        {
+            try
+            {
+                await _mailService.SendEmailAsync(request);
+            }
+            catch (Exception ex)
+            {
+                // Handle exception
+            }
+        }
+
     }
 }
