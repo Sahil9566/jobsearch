@@ -18,3 +18,4 @@ namespace Infastructure.Data
         public DbSet<Register> Registers { get; set; }
     }
 }
+   

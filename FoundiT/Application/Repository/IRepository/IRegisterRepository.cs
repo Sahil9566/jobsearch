@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Repository.IRepository
 {
-    // register irepository
+    
     public interface IRegisterRepository
     {
         Task<(bool, Register)> Register(RegisterDTO register);

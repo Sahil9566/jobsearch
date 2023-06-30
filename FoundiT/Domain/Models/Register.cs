@@ -13,7 +13,7 @@ namespace Domain.Models
 {
     public class Register : IdentityUser
     {
-        [NotMapped]
+        [NotMapped]          
         public IFormFile ImageFile { get; set; }
         public string ResumeUrl { get; set; }
         [Required]
