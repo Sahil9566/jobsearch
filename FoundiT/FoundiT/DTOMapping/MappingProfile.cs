@@ -10,6 +10,7 @@ namespace FoundiT.DTOMapping
         public MappingProfile()
         {
             CreateMap<RegisterDTO, Register>().ReverseMap();
+            CreateMap<LoginDTOs, Register>().ReverseMap();
         }
     }
 }   

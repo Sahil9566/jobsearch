@@ -3,6 +3,7 @@ using Azure.Storage.Blobs;
 using Domain.DTOs;
 using Domain.Models;
 using Infastructure.Data;
+using Infastructure.Migrations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -35,9 +36,16 @@ namespace Application.Repository
             _mailService = mailService; 
         }
 
+       
+
+        public ICollection<Register> GetRegister()
+        {
+            return _context.Registers.ToList();
+        }
+
         public async Task<(bool, Register)> Register(RegisterDTO register)
         {
-            var existingUser = await _context.Registers.FirstOrDefaultAsync(u => u.Email == register.Email || u.PhoneNumber == register.PhoneNumber);
+            var existingUser = await _context.Registers.FirstOrDefaultAsync(u => u.Email == register.Email && u.PhoneNumber == register.PhoneNumber);
             if (existingUser is not null)
             {
                 return (false, null);
@@ -49,7 +57,7 @@ namespace Application.Repository
                 PhoneNumber = register.PhoneNumber,
                 Name = register.Name,
                 UserName = register.Email,
-                CreatedOn = DateTime.UtcNow,
+                CreatedOn = DateTime.Now,
             };
 
             var blobContainer = _blobServiceClient.GetBlobContainerClient("resumefiles");
@@ -80,7 +88,7 @@ namespace Application.Repository
 
             if (isSuccess.Succeeded)
             {
-                var SendOTP = _smsRepository.SendSMSPinWithBasicAuth(register.PhoneNumber);
+                //var SendOTP = _smsRepository.SendSMSPinWithBasicAuth(register.PhoneNumber);
                 return (true, user);
             }
             else
@@ -103,5 +111,20 @@ namespace Application.Repository
             }
         }
 
+        public async Task<bool> VerifyEmail(string email)
+        {
+            var user = await _context.Registers.FirstOrDefaultAsync(u => u.Email == email);
+
+            if (user == null)
+            {
+                return false; 
+            }
+            user.EmailConfirmed = true;
+            user.UpdatedOn = DateTime.Now;
+            await _context.SaveChangesAsync();
+            return true; 
+        }
+
+      
     }
 }

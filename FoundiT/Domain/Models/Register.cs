@@ -16,9 +16,9 @@ namespace Domain.Models
         [NotMapped]          
         public IFormFile ImageFile { get; set; }
         public string ResumeUrl { get; set; }
-        [Required]
+        
         public string Name { get; set; }
-        [Required]
+       
         public Gender Gender { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }

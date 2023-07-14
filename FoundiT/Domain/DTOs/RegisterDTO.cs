@@ -14,8 +14,7 @@ namespace Domain.DTOs
     {
         [NotMapped]
         public IFormFile ImageFile { get; set; }
-        //public string ResumeUrl { get; set; }
-        [Required]
+        
         public string Name { get; set; }
         public Gender? Gender { get; set; }
           
