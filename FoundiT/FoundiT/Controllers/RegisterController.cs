@@ -2,6 +2,7 @@
 using AutoMapper;
 using Domain.DTOs;
 using Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,5 +36,22 @@ namespace FoundiT.Controllers
             }
             return BadRequest(ModelState);   
         }
+
+        [HttpGet("VerifyEmail/{email}")]
+        public async Task<IActionResult> VerifyEmail(string email)
+        {
+            var emailVerification = await _registerRepository.VerifyEmail(email);
+
+            if (emailVerification)
+            {
+                return Ok(new { message = "Email verification successful" });
+            }
+            else
+            {
+                
+                return BadRequest(new { message = "Email verification failed" });
+            }
+        }
+
     }
 }

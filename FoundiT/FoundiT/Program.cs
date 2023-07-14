@@ -12,6 +12,12 @@ using Azure.Storage.Blobs;
 using Twilio;
 using Twilio.Rest.Verify.V2.Service;
 using Microsoft.WindowsAzure.Storage;
+using FluentValidation;
+using Domain.DTOs;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +48,36 @@ builder.Services.AddScoped(_ =>
         TableClient = tableClient
     };
 });
+
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultAuthenticateScheme = GoogleDefaults.AuthenticationScheme;
+//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+//})
+//            .AddGoogle(options =>
+//            {
+//                options.ClientId = "[MyGoogleClientId]";
+//                options.ClientSecret = "[MyGoogleSecretKey]";
+//            });
+
+
+
+//builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+//{
+//    googleOptions.ClientId = builder.Configuration["Authentication:Google:clientid"];
+//    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:clientsecret"];
+//});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "MyCors", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+        .AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddScoped<IRegisterRepository, RegisterRepository>();
@@ -54,10 +90,25 @@ builder.Services.AddScoped<UserManager<Register>>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
+
+//.AddFluentValidation(options =>
+//{
+//   // Validate child properties and root collection elements
+//   options.ImplicitlyValidateChildProperties = true;
+//   options.ImplicitlyValidateRootCollectionElements = true;
+
+//   // Automatic registration of validators in assembly
+//   options.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+//} );
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IValidator<RegisterDTO>,RegisterValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 var app = builder.Build();
 
@@ -69,9 +120,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseCors("MyCors");
 app.MapControllers();
-
 app.Run();
