@@ -147,6 +147,19 @@
           }
         }
       },
+      "BCrypt.Net/0.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/BCrypt.Net.dll": {
+            "related": ".XML"
+          }
+        },
+        "runtime": {
+          "lib/net35/BCrypt.Net.dll": {
+            "related": ".XML"
+          }
+        }
+      },
       "BouncyCastle.Cryptography/2.2.1": {
         "type": "package",
         "compile": {
@@ -3179,6 +3192,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Azure.Storage.Blobs": "12.16.0",
+          "BCrypt.Net": "0.1.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "Infastructure": "1.0.0",
           "MailKit": "4.1.0",
@@ -3206,6 +3220,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "BCrypt.Net": "0.1.0",
           "DotNetOpenAuth.OpenId.Core": "4.3.4.13329",
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.AspNetCore.Authentication.Google": "7.0.5",
@@ -3229,6 +3244,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "BCrypt.Net": "0.1.0",
           "Domain": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.AspNetCore.Authentication.Google": "7.0.5",
@@ -3389,6 +3405,19 @@
         "lib/net6.0/Azure.Storage.Common.xml",
         "lib/netstandard2.0/Azure.Storage.Common.dll",
         "lib/netstandard2.0/Azure.Storage.Common.xml"
+      ]
+    },
+    "BCrypt.Net/0.1.0": {
+      "sha512": "sST2w361Dxt9GGMfpOTiK50wXGV64Ybb1hiX3xjEWnhVYZNF43NuySGwADJa7X1R+bA53NsFR+tuDxcYiJeIOA==",
+      "type": "package",
+      "path": "bcrypt.net/0.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net.0.1.0.nupkg.sha512",
+        "bcrypt.net.nuspec",
+        "lib/net35/BCrypt.Net.XML",
+        "lib/net35/BCrypt.Net.dll"
       ]
     },
     "BouncyCastle.Cryptography/2.2.1": {
@@ -9690,6 +9719,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Application >= 1.0.0",
+      "BCrypt.Net >= 0.1.0",
       "Domain >= 1.0.0",
       "FluentValidation.AspNetCore >= 11.3.0",
       "Infastructure >= 1.0.0",
@@ -9706,50 +9736,46 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nisha\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\FoundiT.csproj",
+      "projectUniqueName": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj",
       "projectName": "FoundiT",
-      "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\FoundiT.csproj",
-      "packagesPath": "C:\\Users\\Nisha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\obj\\",
+      "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj",
+      "packagesPath": "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DOTNET.CSPC142\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\Application.csproj"
+            "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\Application.csproj"
             },
-            "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj"
+            "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj": {
-              "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj"
+            "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj": {
+              "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj"
             }
           }
         }
@@ -9764,6 +9790,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "BCrypt.Net": {
+            "target": "Package",
+            "version": "[0.1.0, )"
+          },
           "FluentValidation.AspNetCore": {
             "target": "Package",
             "version": "[11.3.0, )"
@@ -9830,7 +9860,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -9841,6 +9871,16 @@
       "warningLevel": 1,
       "message": "DotNetOpenAuth.Core 4.3.4.13329 does not provide an inclusive lower bound for dependency Microsoft.Net.Http. An approximate best match of Microsoft.Net.Http 2.0.20505 was resolved.",
       "libraryId": "Microsoft.Net.Http",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BCrypt.Net 0.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BCrypt.Net",
       "targetGraphs": [
         "net7.0"
       ]

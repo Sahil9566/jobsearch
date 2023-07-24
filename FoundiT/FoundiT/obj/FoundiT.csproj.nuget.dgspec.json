@@ -1,42 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\FoundiT.csproj": {}
+    "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\Application.csproj": {
+    "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Nisha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\obj\\",
+        "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DOTNET.CSPC142\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj": {
-                "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj"
+              "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj": {
+                "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj"
               }
             }
           }
@@ -58,6 +56,10 @@
             "Azure.Storage.Blobs": {
               "target": "Package",
               "version": "[12.16.0, )"
+            },
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
@@ -138,35 +140,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj": {
+    "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Nisha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DOTNET.CSPC142\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -185,6 +185,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
             "DotNetOpenAuth.OpenId.Core": {
               "target": "Package",
               "version": "[4.3.4.13329, )"
@@ -252,49 +256,47 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\FoundiT.csproj": {
+    "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\FoundiT.csproj",
+        "projectUniqueName": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj",
         "projectName": "FoundiT",
-        "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\FoundiT.csproj",
-        "packagesPath": "C:\\Users\\Nisha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\FoundiT\\obj\\",
+        "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\FoundiT.csproj",
+        "packagesPath": "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\FoundiT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DOTNET.CSPC142\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Application\\Application.csproj"
+              "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Application\\Application.csproj"
               },
-              "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj"
+              "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj": {
-                "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj"
+              "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj": {
+                "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj"
               }
             }
           }
@@ -309,6 +311,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"
@@ -375,43 +381,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj": {
+    "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj",
+        "projectUniqueName": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj",
         "projectName": "Infastructure",
-        "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\Infastructure.csproj",
-        "packagesPath": "C:\\Users\\Nisha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Infastructure\\obj\\",
+        "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\Infastructure.csproj",
+        "packagesPath": "C:\\Users\\DOTNET.CSPC142\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Infastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nisha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DOTNET.CSPC142\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Nisha\\Desktop\\found\\FoundiT\\Domain\\Domain.csproj"
+              "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\DOTNET.CSPC142\\Desktop\\JOBSEARCHAPP\\.NETCORE\\FoundiT\\Domain\\Domain.csproj"
               }
             }
           }
@@ -426,6 +430,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"
@@ -493,7 +501,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

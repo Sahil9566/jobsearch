@@ -1,6 +1,10 @@
 ﻿using Application.Repository.IRepository;
+using Microsoft.EntityFrameworkCore;
 using System.Text;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
+using Twilio.Types;
 using static System.Net.Mime.MediaTypeNames;
+using Domain.Models;
 
 namespace Application.Repository
 {
@@ -8,8 +12,8 @@ namespace Application.Repository
     {
         public async Task<bool> SendSMSPinWithBasicAuth(string PhoneNumber)
         {
-            string _key = "1cfd2f94-926b-492d-95a9-838adef1bf1c";
-            string _secret = "TFYlxOEoFUmE4OVwEWBbjQ==";
+            string _key = "2f9d1582-5895-47b1-813a-7e4f5e8467bf";
+            string _secret = "KamA3itVKEibslOmuvTfUw==";
             string _sinchUrl = "https://verification.api.sinch.com/verification/v1/verifications";
 
             using (var _client = new HttpClient())
@@ -26,8 +30,8 @@ namespace Application.Repository
                 if (status.IsSuccessStatusCode)
                 {
                     // OTP sent successfully, now verify the OTP
-                    var otpVerificationSuccess = await VerifyOTP("your_otp_value_here");
-                    return otpVerificationSuccess;
+                    //var otpVerificationSuccess = await VerifyOTP("your_otp_value_here");
+                    return true;
                 }
                 else
                 {
@@ -36,7 +40,7 @@ namespace Application.Repository
             }
         }
 
-              
+
         public static StringContent GetSMSVerificationRequestBody(string PhoneNumber)
         {
             var myData = new
@@ -56,34 +60,59 @@ namespace Application.Repository
             );
         }
 
-        public async Task<bool> VerifyOTP(string OTP)
+        public async Task<bool> VerifyOTP(VerifyOTPVM param)
         {
-            string _key = "1cfd2f94-926b-492d-95a9-838adef1bf1c";
-            string _secret = "TFYlxOEoFUmE4OVwEWBbjQ==";
-            string _sinchUrl = $"https://verification.api.sinch.com/verification/v1/verifications/{OTP}";
+            string _key = "2f9d1582-5895-47b1-813a-7e4f5e8467bf";
+            string _secret = "KamA3itVKEibslOmuvTfUw==";
+            //string _sinchUrl = $"https://verification.api.sinch.com/verification/v1/verifications/{OTP}";
 
-            using (var _client = new HttpClient())
-            {
-                var base64String = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_key}:{_secret}"));
+            //using (var _client = new HttpClient())
+            //{
+            //    var base64String = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_key}:{_secret}"));
 
-                var requestMessage = new HttpRequestMessage(HttpMethod.Get, _sinchUrl);
-                requestMessage.Headers.TryAddWithoutValidation("authorization", "basic " + base64String);
+            //    var requestMessage = new HttpRequestMessage(HttpMethod.Get, _sinchUrl);
+            //    requestMessage.Headers.TryAddWithoutValidation("authorization", "basic " + base64String);
 
-                var response = await _client.SendAsync(requestMessage);
+            //    var response = await _client.SendAsync(requestMessage);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    // OTP verification successful
-                    return true;
-                }
-                else
-                {
-                    // OTP verification failed
-                    return false;
-                }
-            }
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        // OTP verification successful
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        // OTP verification failed
+            //        return false;
+            //    }
+            //}
+
+            var _verificationUrl = "https://verification.api.sinch.com/verification/v1/verifications/number/";
+
+            HttpClient client = new HttpClient();
+            string otp = param.OTP;
+
+            string requestBodyJson = $"{{ \"method\": \"sms\", \"sms\": {{ \"code\": \"{otp}\" }} }}";
+            HttpContent requestBody = new StringContent(requestBodyJson, Encoding.UTF8, "application/json");
+
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, _verificationUrl + param.PhoneNumber);
+            var base64String = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_key}:{_secret}"));
+            request.Headers.Add("Authorization", "Basic " + base64String);
+            request.Content = requestBody;
+
+            HttpResponseMessage response = await client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+
+                
+           
+               
+                
+                return (true);
+            else
+                return false;
         }
     }
 }
+
 
 
