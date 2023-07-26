@@ -214,6 +214,13 @@ C:\Users\Nisha\Desktop\found\FoundiT\FoundiT\bin\Debug\net7.0\FluentValidation.d
 C:\Users\Nisha\Desktop\found\FoundiT\FoundiT\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 C:\Users\Nisha\Desktop\found\FoundiT\FoundiT\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Nisha\Desktop\found\FoundiT\FoundiT\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.csproj.AssemblyReference.cache
+C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.AssemblyInfoInputs.cache
+C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.AssemblyInfo.cs
+C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.csproj.CoreCompileInputs.cache
+C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\bin\Debug\net7.0\appsettings.json
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\bin\Debug\net7.0\FoundiT.exe
@@ -314,13 +321,6 @@ C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\bin\Debug\
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\bin\Debug\net7.0\Application.pdb
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\bin\Debug\net7.0\Domain.pdb
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\bin\Debug\net7.0\Infastructure.pdb
-C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.csproj.AssemblyReference.cache
-C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.AssemblyInfoInputs.cache
-C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.AssemblyInfo.cs
-C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.csproj.CoreCompileInputs.cache
-C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\FoundiT.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\staticwebassets\msbuild.FoundiT.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\staticwebassets\msbuild.build.FoundiT.props
 C:\Users\DOTNET.CSPC142\Desktop\JOBSEARCHAPP\.NETCORE\FoundiT\FoundiT\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.FoundiT.props

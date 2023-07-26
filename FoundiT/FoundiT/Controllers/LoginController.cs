@@ -62,29 +62,6 @@ namespace FoundiT.Controllers
         }
 
 
-        [HttpPost("OTPVerfication")]
-        public async Task<IActionResult> OTPVerfication(VerifyOTPVM param)
-        {
-            if (ModelState.IsValid)
-            {
-                var VerifyOtp = await _smsRepository.VerifyOTP(param);
-                var user = _context.Registers.FirstOrDefault(x => x.PhoneNumber == param.PhoneNumber);
-
-                if (VerifyOtp)
-                {
-                    user.PhoneNumberConfirmed = true;
-                    _context.SaveChanges(); // Save the changes to the database
-
-                    return Ok(new { message = "Successfully Verified" });
-                }
-                else
-                {
-                    return BadRequest(new { message = "Failed to Verify, Please check your phone number and OTP " });
-                }
-            }
-
-            return BadRequest(ModelState);
-        }
 
 
 

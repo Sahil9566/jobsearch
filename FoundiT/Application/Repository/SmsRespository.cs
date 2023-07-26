@@ -12,8 +12,8 @@ namespace Application.Repository
     {
         public async Task<bool> SendSMSPinWithBasicAuth(string PhoneNumber)
         {
-            string _key = "2f9d1582-5895-47b1-813a-7e4f5e8467bf";
-            string _secret = "KamA3itVKEibslOmuvTfUw==";
+            string _key = "1cfd2f94-926b-492d-95a9-838adef1bf1c";
+            string _secret = "TFYlxOEoFUmE4OVwEWBbjQ==";
             string _sinchUrl = "https://verification.api.sinch.com/verification/v1/verifications";
 
             using (var _client = new HttpClient())
@@ -62,8 +62,8 @@ namespace Application.Repository
 
         public async Task<bool> VerifyOTP(VerifyOTPVM param)
         {
-            string _key = "2f9d1582-5895-47b1-813a-7e4f5e8467bf";
-            string _secret = "KamA3itVKEibslOmuvTfUw==";
+            string _key = "1cfd2f94-926b-492d-95a9-838adef1bf1c";
+            string _secret = "TFYlxOEoFUmE4OVwEWBbjQ==";
             //string _sinchUrl = $"https://verification.api.sinch.com/verification/v1/verifications/{OTP}";
 
             //using (var _client = new HttpClient())
