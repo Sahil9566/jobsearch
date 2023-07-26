@@ -14,7 +14,7 @@ namespace Application.Repository.IRepository
     public interface IRegisterRepository  
     {
         ICollection<Register> GetRegister();
-        Task<(bool, Register)> Register(RegisterDTO register);
+        Task<(bool, Register, ProfessionalDetails)> Register(RegisterDTO register);
         Task<bool> VerifyEmail(string email);
 
     }

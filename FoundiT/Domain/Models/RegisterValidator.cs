@@ -9,7 +9,7 @@ namespace Domain.Models
     {
         public RegisterValidator()
         {
-            RuleFor(u => u.ImageFile).NotNull().WithMessage("Please ensure that you have entered your ImageFile");
+            //RuleFor(u => u.ImageFile).NotNull().WithMessage("Please ensure that you have entered your ImageFile");
             RuleFor(u => u.Gender).NotNull();
             RuleFor(u => u.Name).NotNull().WithMessage("Name is required");
             RuleFor(u => u.Email).NotNull().WithMessage("Email is required");

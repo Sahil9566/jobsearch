@@ -9,6 +9,7 @@
       "FoundiT/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "BCrypt.Net": "0.1.0",
           "Domain": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "Infastructure": "1.0.0",
@@ -133,6 +134,14 @@
           "lib/net6.0/Azure.Storage.Common.dll": {
             "assemblyVersion": "12.15.0.0",
             "fileVersion": "12.1500.23.21104"
+          }
+        }
+      },
+      "BCrypt.Net/0.1.0": {
+        "runtime": {
+          "lib/net35/BCrypt.Net.dll": {
+            "assemblyVersion": "0.1.4141.31969",
+            "fileVersion": "0.1.0.0"
           }
         }
       },
@@ -1793,6 +1802,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Azure.Storage.Blobs": "12.16.0",
+          "BCrypt.Net": "0.1.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "Infastructure": "1.0.0",
           "MailKit": "4.1.0",
@@ -1815,6 +1825,7 @@
       },
       "Domain/1.0.0": {
         "dependencies": {
+          "BCrypt.Net": "0.1.0",
           "DotNetOpenAuth.OpenId.Core": "4.3.4.13329",
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.AspNetCore.Authentication.Google": "7.0.5",
@@ -1833,6 +1844,7 @@
       },
       "Infastructure/1.0.0": {
         "dependencies": {
+          "BCrypt.Net": "0.1.0",
           "Domain": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.AspNetCore.Authentication.Google": "7.0.5",
@@ -1913,6 +1925,13 @@
       "sha512": "sha512-/SAgn9hhjfHO0RPWp0ilGLr3aMPz+rrz6iRgLKTb1708pI78WLtsQ7/kGooUbCU2flSnk/egmJ0Qj9rFVks/nA==",
       "path": "azure.storage.common/12.15.0",
       "hashPath": "azure.storage.common.12.15.0.nupkg.sha512"
+    },
+    "BCrypt.Net/0.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sST2w361Dxt9GGMfpOTiK50wXGV64Ybb1hiX3xjEWnhVYZNF43NuySGwADJa7X1R+bA53NsFR+tuDxcYiJeIOA==",
+      "path": "bcrypt.net/0.1.0",
+      "hashPath": "bcrypt.net.0.1.0.nupkg.sha512"
     },
     "BouncyCastle.Cryptography/2.2.1": {
       "type": "package",

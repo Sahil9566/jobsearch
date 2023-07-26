@@ -13,10 +13,10 @@ namespace Domain.Models
 {
     public class Register : IdentityUser
     {
-        [NotMapped]          
+        [NotMapped]
         public IFormFile ImageFile { get; set; }
-        public string ResumeUrl { get; set; }
-        
+        public string  ResumeUrl { get; set; }
+
         public string Name { get; set; }
        
         public Gender Gender { get; set; }

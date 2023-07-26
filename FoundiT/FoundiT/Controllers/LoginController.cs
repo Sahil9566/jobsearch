@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Crypto.Generators;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FoundiT.Controllers
 {
@@ -19,40 +21,49 @@ namespace FoundiT.Controllers
         private readonly Applicationdbcontext _context;
         private readonly IMapper _mapper;
         private readonly UserManager<Register> _userManager;
-        public LoginController(IRegisterRepository registerRepository, Applicationdbcontext context, IMapper mapper, UserManager<Register> userManager)
+        private readonly ISmsRepository _smsRepository;
+        public LoginController(IRegisterRepository registerRepository, Applicationdbcontext context, IMapper mapper, UserManager<Register> userManager, ISmsRepository smsRepository)
         {
             _registerRepository = registerRepository;
             _context = context;
             _mapper = mapper;
             _userManager = userManager;
+            _smsRepository = smsRepository;
 
         }
 
-
-
         [HttpPost("Login")]
-        public IActionResult Login([FromBody] LoginDTOs loginDTOs)
+        public async Task<IActionResult> Login([FromBody] LoginDTOs loginDTOs)
         {
             if (loginDTOs == null) return BadRequest(ModelState);
 
-            var user = _context.Registers.FirstOrDefault(x => x.Email == loginDTOs.Email);
+            var user = await _userManager.FindByEmailAsync(loginDTOs.Email);
 
             if (user == null) return BadRequest("Email is not registered");
 
-            var passwordVerificationResult = _userManager.PasswordHasher.VerifyHashedPassword(user, user.PasswordHash, loginDTOs.Password);
+            // Verify the provided password against the stored hashed password
+            var passwordVerificationResult = await _userManager.CheckPasswordAsync(user, loginDTOs.Password);
 
-            if (passwordVerificationResult == PasswordVerificationResult.Failed)
+            if (!passwordVerificationResult)
             {
                 return BadRequest("Invalid email or password");
             }
 
-            if (!user.EmailConfirmed)
+            var options = new CookieOptions
             {
-                return StatusCode(StatusCodes.Status404NotFound, new { message = "Email is not verified" });
-            }
+                Expires = DateTime.UtcNow.AddDays(7),
+                SameSite = SameSiteMode.None,
+                Secure = true
+            };
+
+            Response.Cookies.Append("UserEmail", user.Email, options);
 
             return Ok(new { message = "User signed in successfully" });
         }
+
+
+
+
 
     }
 }
