@@ -13,9 +13,9 @@ namespace Domain.Models
 {
     public class Register : IdentityUser
     {
-        [NotMapped]
-        public IFormFile ImageFile { get; set; }
-        public string  ResumeUrl { get; set; }
+        //[NotMapped]
+       // public IFormFile ImageFile { get; set; }
+       // public string  ResumeUrl { get; set; }
 
         public string Name { get; set; }
        

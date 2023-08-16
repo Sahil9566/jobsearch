@@ -159,28 +159,28 @@ namespace Application.Repository
                 UserName = register.Email,
                 CreatedOn = DateTime.Now,
             };
-            var blobContainer = _blobServiceClient.GetBlobContainerClient("kabulexpress");
-            var imageFileName = Guid.NewGuid().ToString() + Path.GetExtension(register.ImageFile.FileName);
+            //var blobContainer = _blobServiceClient.GetBlobContainerClient("kabulexpress");
+            //var imageFileName = Guid.NewGuid().ToString() + Path.GetExtension(register.ImageFile.FileName);
 
 
 
-            var blobClient = blobContainer.GetBlobClient(imageFileName);
+            //var blobClient = blobContainer.GetBlobClient(imageFileName);
 
 
 
-            // Delete the existing blob file if it exists
-            if (await blobClient.ExistsAsync())
-            {
-                await blobClient.DeleteAsync();
-            }
+            //// Delete the existing blob file if it exists
+            //if (await blobClient.ExistsAsync())
+            //{
+            //    await blobClient.DeleteAsync();
+            //}
 
 
 
-            await blobClient.UploadAsync(register.ImageFile.OpenReadStream());
+            //await blobClient.UploadAsync(register.ImageFile.OpenReadStream());
 
 
 
-            user.ResumeUrl = blobClient.Uri.ToString(); // Save the URL instead of the file name
+            //user.ResumeUrl = blobClient.Uri.ToString(); // Save the URL instead of the file name
             var mail = new MailRequest()
             {
                 Body = $"Please verify your account <a href='http://localhost:3000/emailConfirmation/{register.Name}'>Verify Emails</a>",
@@ -240,6 +240,32 @@ namespace Application.Repository
             }
         }
 
+        public async Task<List<Register>> GetAllRegistersAsync()
+        {
+            return await _context.Registers.ToListAsync();
+        }
 
+        public async Task<Register> GetRegisterById(string registerId)
+        {
+            return await _context.Registers.FindAsync(registerId);
+        }
+
+        public async Task<bool> UpdateRegister(Register register)
+        {
+            _context.Registers.Update(register);
+            var result = await _context.SaveChangesAsync();
+            return result > 0;
+        }
+
+        public async Task<bool> DeleteRegister(string id)
+        {
+            var register = await _context.Registers.FindAsync(id);
+            if (register == null)
+                return false;
+
+            _context.Registers.Remove(register);
+            var result = await _context.SaveChangesAsync();
+            return result > 0;
+        }
     }
 }

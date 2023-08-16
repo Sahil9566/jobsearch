@@ -13,8 +13,8 @@ namespace Domain.DTOs
 {
     public class RegisterDTO
     {
-        [NotMapped]
-        public IFormFile ImageFile { get; set; }
+       // [NotMapped]
+       // public IFormFile ImageFile { get; set; }
 
         public string Name { get; set; }
         public Gender? Gender { get; set; }
@@ -22,7 +22,7 @@ namespace Domain.DTOs
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
-     
+
         //EducationDetails
         [NotMapped]
         public string HighestQualification { get; set; }
