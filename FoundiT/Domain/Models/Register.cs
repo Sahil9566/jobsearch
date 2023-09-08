@@ -22,5 +22,11 @@ namespace Domain.Models
         public Gender Gender { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
+        public string EducationaldetailsId { get; set; }
+        public EducationDetails EducationDetails { get; set; }
+
+
+
+
     }  
 }

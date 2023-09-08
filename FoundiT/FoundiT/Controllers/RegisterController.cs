@@ -213,13 +213,9 @@ namespace FoundiT.Controllers
             if (ModelState.IsValid)
             {
                 var VerifyOtp = await _smsRepository.VerifyOTP(param);
-                var user = _context.Registers.FirstOrDefault(x => x.PhoneNumber == param.PhoneNumber);
-
-                if (VerifyOtp)
+                if (VerifyOtp==true)
                 {
-                    user.PhoneNumberConfirmed = true;
-                    _context.SaveChanges(); // Save the changes to the database
-
+                 
                     return Ok(new { message = "Successfully Verified" });
                 }
                 else

@@ -156,7 +156,7 @@ namespace Application.Repository
                 Email = register.Email,
                 PhoneNumber = register.PhoneNumber,
                 Name = register.Name,
-                UserName = register.Email,
+                UserName = register.Name,
                 CreatedOn = DateTime.Now,
             };
             //var blobContainer = _blobServiceClient.GetBlobContainerClient("kabulexpress");
@@ -203,7 +203,7 @@ namespace Application.Repository
 
                 var education_Details = new EducationDetails();
 
-                education_Details.RegisterID = user.Id;
+               education_Details.RegisterID = user.Id;
                 education_Details.HighestQualification = register.HighestQualification;
                 education_Details.SelectYourField = register.SelectYourField;
                 education_Details.University_Insitute = register.University_Insitute;
@@ -222,12 +222,12 @@ namespace Application.Repository
                 await _context.jobPrefrences.AddAsync(jobprefrence);
                 await _context.SaveChangesAsync();
 
-                bool sendSms = await _smsRepository.SendSMSPinWithBasicAuth(register.PhoneNumber);
-                if (sendSms)
-                {
-                    return (true, null, null);
-                }
-                return (false, null, null);
+                //bool sendSms = await _smsRepository.SendSMSPinWithBasicAuth(register.PhoneNumber);
+                //if (sendSms)
+                //{
+                //    return (true, null, null);
+                //}
+                //return (false, null, null);
             }
 
             if (isSuccess.Succeeded)

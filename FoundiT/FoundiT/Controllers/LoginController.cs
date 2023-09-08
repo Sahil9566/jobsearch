@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Bcpg;
 using Org.BouncyCastle.Crypto.Generators;
 using System.Security.Cryptography;
 using System.Text;
@@ -41,24 +42,32 @@ namespace FoundiT.Controllers
 
             if (user == null) return BadRequest("Email is not registered");
 
-            // Verify the provided password against the stored hashed password
-            var passwordVerificationResult = await _userManager.CheckPasswordAsync(user, loginDTOs.Password);
+            var passwordVerificationResult = _userManager.PasswordHasher.VerifyHashedPassword(user, user.PasswordHash, loginDTOs.Password);
 
-            if (!passwordVerificationResult)
+            if (passwordVerificationResult == PasswordVerificationResult.Success)
             {
+
+                var options = new CookieOptions
+                {
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    SameSite = SameSiteMode.None,
+                    Secure = true
+                };
+
+                Response.Cookies.Append("UserEmail", user.Email, options);
+
+                return Ok(new  {message = "User signed in successfully"  , userId=user.Id});
+            }
+            else if (passwordVerificationResult == PasswordVerificationResult.Failed)
+            {
+                
                 return BadRequest("Invalid email or password");
             }
-
-            var options = new CookieOptions
+            else
             {
-                Expires = DateTime.UtcNow.AddDays(7),
-                SameSite = SameSiteMode.None,
-                Secure = true
-            };
-
-            Response.Cookies.Append("UserEmail", user.Email, options);
-
-            return Ok(new { message = "User signed in successfully" });
+                
+                return BadRequest("Error in password verification");
+            }
         }
 
 
