@@ -156,31 +156,31 @@ namespace Application.Repository
                 Email = register.Email,
                 PhoneNumber = register.PhoneNumber,
                 Name = register.Name,
-                UserName = register.Email,
+                UserName = register.Name,
                 CreatedOn = DateTime.Now,
             };
-            var blobContainer = _blobServiceClient.GetBlobContainerClient("kabulexpress");
-            var imageFileName = Guid.NewGuid().ToString() + Path.GetExtension(register.ImageFile.FileName);
+            //var blobContainer = _blobServiceClient.GetBlobContainerClient("kabulexpress");
+            //var imageFileName = Guid.NewGuid().ToString() + Path.GetExtension(register.ImageFile.FileName);
 
 
 
-            var blobClient = blobContainer.GetBlobClient(imageFileName);
+            //var blobClient = blobContainer.GetBlobClient(imageFileName);
 
 
 
-            // Delete the existing blob file if it exists
-            if (await blobClient.ExistsAsync())
-            {
-                await blobClient.DeleteAsync();
-            }
+            //// Delete the existing blob file if it exists
+            //if (await blobClient.ExistsAsync())
+            //{
+            //    await blobClient.DeleteAsync();
+            //}
 
 
 
-            await blobClient.UploadAsync(register.ImageFile.OpenReadStream());
+            //await blobClient.UploadAsync(register.ImageFile.OpenReadStream());
 
 
 
-            user.ResumeUrl = blobClient.Uri.ToString(); // Save the URL instead of the file name
+            //user.ResumeUrl = blobClient.Uri.ToString(); // Save the URL instead of the file name
             var mail = new MailRequest()
             {
                 Body = $"Please verify your account <a href='http://localhost:3000/emailConfirmation/{register.Name}'>Verify Emails</a>",
@@ -203,7 +203,7 @@ namespace Application.Repository
 
                 var education_Details = new EducationDetails();
 
-                education_Details.RegisterID = user.Id;
+               education_Details.RegisterID = user.Id;
                 education_Details.HighestQualification = register.HighestQualification;
                 education_Details.SelectYourField = register.SelectYourField;
                 education_Details.University_Insitute = register.University_Insitute;
@@ -222,12 +222,12 @@ namespace Application.Repository
                 await _context.jobPrefrences.AddAsync(jobprefrence);
                 await _context.SaveChangesAsync();
 
-                bool sendSms = await _smsRepository.SendSMSPinWithBasicAuth(register.PhoneNumber);
-                if (sendSms)
-                {
-                    return (true, null, null);
-                }
-                return (false, null, null);
+                //bool sendSms = await _smsRepository.SendSMSPinWithBasicAuth(register.PhoneNumber);
+                //if (sendSms)
+                //{
+                //    return (true, null, null);
+                //}
+                //return (false, null, null);
             }
 
             if (isSuccess.Succeeded)
@@ -240,6 +240,32 @@ namespace Application.Repository
             }
         }
 
+        public async Task<List<Register>> GetAllRegistersAsync()
+        {
+            return await _context.Registers.ToListAsync();
+        }
 
+        public async Task<Register> GetRegisterById(string registerId)
+        {
+            return await _context.Registers.FindAsync(registerId);
+        }
+
+        public async Task<bool> UpdateRegister(Register register)
+        {
+            _context.Registers.Update(register);
+            var result = await _context.SaveChangesAsync();
+            return result > 0;
+        }
+
+        public async Task<bool> DeleteRegister(string id)
+        {
+            var register = await _context.Registers.FindAsync(id);
+            if (register == null)
+                return false;
+
+            _context.Registers.Remove(register);
+            var result = await _context.SaveChangesAsync();
+            return result > 0;
+        }
     }
 }

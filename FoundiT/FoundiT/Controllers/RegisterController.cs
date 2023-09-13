@@ -38,12 +38,31 @@ namespace FoundiT.Controllers
             _userManager = userManager;
             _smsRepository = smsRepository;
         }
+
+
+
+
+        //display data from database
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var registers = await _registerRepository.GetAllRegistersAsync();
+                return Ok(registers);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while getting data");
+            }
+        }
+
         [HttpPost]
         [Route("api/RegisterUser")]
         public async Task<IActionResult> RegisterUser([FromForm] RegisterDTO register)
         {
 
-
+         
             if (ModelState.IsValid)
             {
                 var user = await _registerRepository.Register(register);
@@ -59,6 +78,79 @@ namespace FoundiT.Controllers
             }
             return BadRequest(ModelState);
         }
+
+
+        // get data by GetRegisterbyId
+        [HttpGet("GetUserById")]
+        public async Task<IActionResult> GetRegister(string registerId)
+        {
+            try
+            {
+                var register = await _registerRepository.GetRegisterById(registerId);
+
+                if (register == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(register);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "An error occurred while getting data");
+            }
+        }
+
+
+        [HttpPut("UpdateUserDetails")]
+        public async Task<IActionResult> UpdateRegister([FromBody] Register register)
+        {
+            try
+            {
+                var existingRegister = await _registerRepository.GetRegisterById(register.Id);
+
+                if (existingRegister == null)
+                {
+                    return NotFound();
+                }
+
+                existingRegister.Name = register.Name;
+                _registerRepository.UpdateRegister(existingRegister);
+                await _context.SaveChangesAsync();
+
+                return Ok(existingRegister);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating the register.");
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteRegister(string userId)
+        {
+            try
+            {
+
+                var register = _context.Registers.FirstOrDefault(x => x.Id == userId);
+
+                if (register is null)
+                {
+                    return NotFound();
+                }
+
+                var isDeleted = await _userManager.DeleteAsync(register);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+        }
+
 
         [HttpGet("VerifyEmail/{email}")]
         public async Task<IActionResult> VerifyEmail(string email)
@@ -121,13 +213,9 @@ namespace FoundiT.Controllers
             if (ModelState.IsValid)
             {
                 var VerifyOtp = await _smsRepository.VerifyOTP(param);
-                var user = _context.Registers.FirstOrDefault(x => x.PhoneNumber == param.PhoneNumber);
-
-                if (VerifyOtp)
+                if (VerifyOtp==true)
                 {
-                    user.PhoneNumberConfirmed = true;
-                    _context.SaveChanges(); // Save the changes to the database
-
+                 
                     return Ok(new { message = "Successfully Verified" });
                 }
                 else
@@ -139,5 +227,29 @@ namespace FoundiT.Controllers
             return BadRequest(ModelState);
         }
 
+
+        //Resend OTp
+
+        [HttpPost("Resend")]
+        public async Task<IActionResult> SendSMS([FromBody] SMSRequestDto request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            string phoneNumber = request.PhoneNumber;
+
+            bool success = await _smsRepository.SendSMSPinWithBasicAuth(phoneNumber);
+
+            if (success)
+            {
+                return Ok(new { Message = "SMS sent successfully." });
+            }
+            else
+            {
+                return BadRequest(new { Message = "Failed to send SMS." });
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Domain.Models
             RuleFor(u => u.Gender).NotNull();
             RuleFor(u => u.Name).NotNull().WithMessage("Name is required");
             RuleFor(u => u.Email).NotNull().WithMessage("Email is required");
-            RuleFor(u => u.Password).NotNull().MaximumLength(10);
+            RuleFor(u => u.Password).NotNull().MaximumLength(8);
             RuleFor(u => u.PhoneNumber).NotNull();
 
 

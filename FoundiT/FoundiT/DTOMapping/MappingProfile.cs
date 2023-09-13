@@ -11,6 +11,7 @@ namespace FoundiT.DTOMapping
         {
             CreateMap<RegisterDTO, Register>().ReverseMap();
             CreateMap<LoginDTOs, Register>().ReverseMap();
+            CreateMap<SMSRequestDto, Register>().ReverseMap();
         }
     }
 }   

@@ -15,7 +15,11 @@ namespace Application.Repository.IRepository
     {
         ICollection<Register> GetRegister();
         Task<(bool, Register, ProfessionalDetails)> Register(RegisterDTO register);
+        Task<List<Register>> GetAllRegistersAsync();
         Task<bool> VerifyEmail(string email);
+        Task<Register> GetRegisterById(string registerId);
+        Task<bool> UpdateRegister(Register register);
+        Task<bool> DeleteRegister(string id);
 
     }
 }
